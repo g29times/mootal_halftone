@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 		
-	<title>HalfTone Template</title>
+	<title>Mootal</title>
 	<meta name="description" content="">
 	
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -65,7 +65,7 @@
 							<li><a href="page-sidebar.html">Sidebar Page</a></li>
 						</ul>
 					</li>-->
-					<li><a href="64.html"><span>BLOG</span></a></li>
+					<li><a href="blog.html"><span>BLOG</span></a></li>
 					<!--<li><a href="portfolio.html"><span>WORK</span></a></li>-->
 					<li><a href="contact.html"><span>CONTACT</span></a></li>
 					<!--<li><a href="http://themeforest.net/item/halftone-wordpress-theme/2661175?ref=Ansimuz"><span>WORDPRESS VERSION</span></a></li>-->
@@ -109,7 +109,9 @@
 						<div class="date"><span class="m">DEC</span><span class="d">22</span></div>
 					</a>
 					<a href="64.html"  class="excerpt">海街女孩日记(港) / Kamakura Diary / Umimachi Diary / Our Little Sister</a>
-					<div class="categories"><a href="#" >film, </a><a href="#" >sanwen, </a><a href="#" >photo, </a></div>
+					<div class="categories">
+						<a href="blog.html?tag=film">film</a>, <a href="blog.html?tag=essay">essay</a>, <a href="blog.html?tag=photo">photo</a>
+					</div>
 				</li>
 				
 				<li>
@@ -147,8 +149,11 @@
 					
 					<ul class="tweet_list">
 						<li>
-						<div class="tweet_time">Today</div>
-						Enter an small text notification visible on all pages. <a href="http://twitter.com/ansimuz" >@ansimuz</a> </li>
+						<div class="tweet_time">
+							<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257048969'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257048969%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
+							</script>
+						</div>
+						Change a little everyday. <a href="http://twitter.com/g29tony" >@g29tony</a> </li>
 					</ul>
 					
 					</div>
@@ -227,7 +232,7 @@
 			<!-- bottom -->
 			<div id="bottom">
 				<div id="widget-trigger-holder"><a id="widget-trigger" href="#" title="View More" class="poshytip"></a></div>
-				<div id="content">HalfTone Theme by <a href="http://www.luiszuno.com" >luiszuno.com</a> </div>
+				<div id="content">Theme by <a href="http://www.luiszuno.com" >luiszuno.com</a> </div>
 			</div>
 			<!-- ENDS bottom -->
 			
@@ -244,19 +249,16 @@
 	<script src="js/jquery-1.7.1.min.js"></script>
 
 	<!-- Customed JS -->
+	<script src="article_resource/js/common.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			console.log(1);
+			dyGenerate("#social-bar", "article_resource/social-bar.htm");
 		});
 
 		$( "#slider" ).click(function () {
 			top.location=(getArtId($( ".nivo-main-image" ).attr("src")) + ".html");
 		});
 
-		function getArtId(src) {
-			var id = src.substring( src.lastIndexOf("/")+1, src.length-4 );
-			return id;
-		}
 	</script>
 
 	<script src="js/custom.js"></script>
@@ -271,6 +273,7 @@
 	<script src="js/css3-mediaqueries.js"></script>
 	<script src="js/tabs.js"></script>
 	<script  src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+
 	<!-- end scripts -->
 
 </body>

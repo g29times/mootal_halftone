@@ -89,14 +89,16 @@
 					</div>
 					<div class="entry-left-data">
 						<div class="entry-date"><span class="m">DEC</span><span class="d">22</span></div>
-						<a href="64.html#comments" class="comments">161</a>
+						<a href="64.html#disqus_thread" class="comments">161</a>
 					</div>
 					
 					<div class="entry-right-data">
 						<a href="64.html" class="post-heading" >《海街日记》：像棵梅树一样，一直站在原地，在四季中流转</a>
 						<div class="meta">
-							<span class="user"><a href="#">2015-12-22 舒行 豆瓣电影</a></span>
-							<span class="tags"><a href="#">red</a>, <a href="#">cyan</a>, <a href="#">white</a>, <a href="#">blue</a></span>
+							<span class="user">2015-12-22 舒行<a href="http://movie.douban.com/"> 豆瓣电影</a></span>
+							<span class="tags">
+								<a href="blog.html?tag=film">film</a>, <a href="blog.html?tag=essay">essay</a>, <a href="blog.html?tag=photo">photo</a>
+							</span>
 							</div>
 						<div class="excerpt">
 							<p>
@@ -145,13 +147,36 @@
 					</div>
 				</article>
 				
-				
+				<div id="disqussComments">
+					<div id="disqus_thread"></div>
+					<script>
+					/**
+					* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+					*/
+					var disqus_shortname = 'mootal';
+					var disqus_config = function () {
+					this.page.url = "http://www.mootal.com/"; // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = "64.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+					/**/
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					<script id="dsq-count-scr" src="https://mootal.disqus.com/count.js" async></script>
+				</div>
+
 				<!-- Comments wrap-->
-				<div id="comments-wrap">
-					<h4 class="heading">3 comments</h4>
+				<!--   <div id="comments-wrap">
+					<h4 class="heading">3 comments</h4>   -->
 								
 					<!-- comments list -->
-					<ul class="commentlist">
+					<!--   <ul class="commentlist">
 						<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 parent" id="comment-1">
 							<div id="div-comment-1" class="comment-body">
 								<div class="comment-author vcard">
@@ -202,9 +227,9 @@
 								</li>
 							</ul>
 						</li>
-					</ul>
+					</ul>   -->
 					<!-- ENDS comments list -->
-				</div>
+				<!--   </div>   -->
 				<!-- ENDS Comments wrap -->
 				
 				
@@ -397,6 +422,14 @@
 	
 	<!-- scripts concatenated and minified via build script -->
 	<script src="js/jquery-1.7.1.min.js"></script>
+	<!-- Customed JS -->
+	<script src="article_resource/js/common.js"></script>
+	<script type="text/javascript">
+		dyGenerate("#social-bar", "article_resource/social-bar.htm");
+		dyGenerate("footer", "article_resource/import.htm");
+		// dyGenerate("#disqussComments", "article_resource/disqussComments.htm");
+	</script>
+
 	<script src="js/custom.js"></script>
 	
 	<!-- superfish -->

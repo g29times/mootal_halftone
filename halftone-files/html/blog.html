@@ -4,7 +4,7 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns:tester class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	
@@ -56,18 +56,18 @@
 			<nav class="cf">
 				<ul id="nav" class="sf-menu">
 					<li><a href="index.html"><span>HOME</span></a></li>
-					<li><a href="page.html"><span>FEATURES</span></a>
+					<!--<li><a href="page.html"><span>FEATURES</span></a>
 						<ul>
 							<li><a href="page.html">Columns</a></li>
 							<li><a href="page-typography.html">Typography</a></li>
 							<li><a href="page-elements.html">Elements</a></li>
 							<li><a href="page-sidebar.html">Sidebar Page</a></li>
 						</ul>
-					</li>
+					</li>-->
 					<li class="current-menu-item"><a href="blog.html"><span>BLOG</span></a></li>
-					<li><a href="portfolio.html"><span>WORK</span></a></li>
+					<!--<li><a href="portfolio.html"><span>WORK</span></a></li>-->
 					<li><a href="contact.html"><span>CONTACT</span></a></li>
-					<li><a href="http://themeforest.net/item/halftone-wordpress-theme/2661175?ref=Ansimuz"><span>WORDPRESS VERSION</span></a></li>
+					<!--<li><a href="http://themeforest.net/item/halftone-wordpress-theme/2661175?ref=Ansimuz"><span>WORDPRESS VERSION</span></a></li>-->
 				</ul>
 				<div id="combo-holder"></div>
 			</nav>
@@ -84,23 +84,23 @@
 			
 				<article class="cf">
 					<div class="feature-image">
-						<a href="single.html" ><img src="img/dummies/672x400a.jpg" alt="Thumbnail" /></a>
+						<a href="64.html" ><img src="article_resource/64/img/672.png" alt="Thumbnail" /></a>
 					</div>
 					<div class="entry-left-data">
-						<div class="entry-date"><span class="m">JAN</span><span class="d">23</span></div>
-						<a href="single.html#comments" class="comments">161</a>
+						<div class="entry-date"><span class="m">DEC</span><span class="d">22</span></div>
+						<a href="64.html#disqus_thread" class="comments">161</a>
 					</div>
 					
 					<div class="entry-right-data">
-						<a href="single.html" class="post-heading" >LOREM IPSUM DOLOR</a>
+						<a href="64.html" class="post-heading" >海街日记</a>
 						<div class="meta">
-							<span class="user"><a href="#">By LuisZuno, </a></span>
-							<span class="tags"><a href="#">red</a>, <a href="#">cyan</a>, <a href="#">white</a>, <a href="#">blue</a></span>
+							<span class="user">2015-12-22 舒行<a href="http://movie.douban.com/"> 豆瓣电影</a></span>
+							<span class="tags"><a href="blog.html?tag=film">film</a>, <a href="blog.html?tag=essay">essay</a>, <a href="blog.html?tag=photo">photo</a></span>
 							</div>
 						<div class="excerpt">
-							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. 
+							故里家中的梅树都已枯老，但东京书斋旁的唯一的一株白梅，却尚年轻，因而花是纯白的。梅树过早地长出坚硬的小蓓蕾，这个季节可还没着花。正是在这尚未着花的时刻，自然地培育着一种望春的心情吧。水仙的黄花，山茶的红花，恐怕是这个季节屈指可数的花朵了。
 						</div>	
-						<a href="single.html" class="link-button">Read More</a>	
+						<a href="64.html" class="link-button">Read More</a>	
 					</div>
 				</article>
 				
@@ -310,16 +310,43 @@
 			
 		</footer>
 		
-		
+		<tester id="tester">
+			<!-- <object type="text/x-scriptlet" data="import.htm" width=100% height=30></object> -->
+		</tester>
+
 	</div>
 	<!-- ENDS WRAPPER -->
 	
 	<!-- JavaScript at the bottom for fast page loading -->
-	
-	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
-	
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>-->
+	<script src="js/jquery-1.7.1.min.js"></script>
+
+	<!-- Customed JS -->
+	<script src="article_resource/js/common.js"></script>
+	<script type="text/javascript">
+		
+		console.log(GetQueryString("tag"));
+
+		var objs = [{film: ['64', 'single']}];
+		console.log(objs[0].film);
+
+		dyGenerate("#social-bar", "article_resource/social-bar.htm");
+		dyGenerate("footer", "article_resource/import.htm");
+
+		// $( "#posts-list" ).
+		/* $.getJSON("article_resource/data/article_tag.json", function(json) {
+		  	console.log("JSON Data: " + json);
+		  	$( "tester" ).html(json);
+		});
+
+		$("footer").ajaxSend(function(e, xhr, opt){
+		  	$(this).html("Requesting " + opt.url);
+		}); */
+	</script>
+
 	<!-- scripts concatenated and minified via build script -->
 	<script src="js/custom.js"></script>
 	
